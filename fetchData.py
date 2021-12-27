@@ -1,7 +1,5 @@
 from fastapi import FastAPI
 import requests
-import json
-
 app = FastAPI()
 
 @app.get('/fetchReel/{id}')
@@ -24,4 +22,7 @@ def fetchReel(id):
 
     url = f"https://www.instagram.com/reel/{id}/?__a=1"
     response = session.get(url, cookies="", headers={'Host': urlparse(url).hostname}, stream=False, timeout=90)
-    return(f"{response.json()}")
+    try:
+        return (f"{response.json()}")
+    except
+        return ("error")
