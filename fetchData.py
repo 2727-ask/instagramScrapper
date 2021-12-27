@@ -21,6 +21,6 @@ def fetchReel(id):
     session.headers.update({'X-CSRFToken': req.cookies['csrftoken']})
 
     url = f"https://www.instagram.com/reel/{id}/?__a=1"
-    response = session.get(url, cookies="", headers={'Host': urlparse(url).hostname}, stream=False, timeout=90)
+    response = session.get(url, cookies="", headers={'Host': urlparse(url).hostname}, stream=False, timeout=190)
 
     return (f"{response.json()}")
