@@ -35,14 +35,4 @@ def fetchReel(id):
     login_response = requests.post(login_url, data=payload, headers=login_header)
     json_data = json.loads(login_response.text)
 
-    if json_data["authenticated"]:
-        print("login successful")
-        cookies = login_response.cookies
-        cookie_jar = cookies.get_dict()
-        csrf_token = cookie_jar['csrftoken']
-        print("csrf_token: ", csrf_token)
-        session_id = cookie_jar['sessionid']
-        print("session_id: ", session_id)
-    else:
-        print("login failed ", login_response.text)
-
+    print(json_data)
