@@ -33,4 +33,4 @@ def fetchReel(id):
     print(res.content)
     url = f"https://www.instagram.com/reel/{id}/?__a=1"
     result = s.get(url)
-    return(result.content)
+    return(json.loads(result.content))
