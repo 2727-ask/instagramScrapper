@@ -29,8 +29,8 @@ def fetchReel(id):
         "Referer": "https://www.instagram.com/accounts/login/",
         "x-csrftoken": csrf
     }
-    res = s.post(login_url,data=payload,headers=login_header)
+    res = s.post(login_url, data=payload, headers=login_header)
     print(res.content)
-    return("Hello World")
-
-
+    url = f"https://www.instagram.com/reel/{id}/?__a=1"
+    result = s.get(url)
+    return(result.content)
